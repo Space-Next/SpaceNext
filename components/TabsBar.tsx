@@ -6,7 +6,7 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const TabsBar = ({ children }: IProps) => {
+const Navigation = ({ children }: IProps) => {
   const router = useRouter();
   const links = ["rockets", "launches", "starlink", "about"];
   const selectedStyle = (link: string) =>
@@ -34,4 +34,4 @@ const TabsBar = ({ children }: IProps) => {
   );
 };
 
-export default TabsBar;
+export default Navigation;
