@@ -13,12 +13,12 @@ module.exports = {
         "16xl": ["14rem", "14rem"],
       },
       fontFamily: {
-        bungee: ["Bungee Outline", "cursive", "sans-serif"],
+        nunito: ["Nunito", "sans-serif"],
       },
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("tailwindcss-writing-mode")],
 };
