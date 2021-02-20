@@ -6,11 +6,13 @@ import "../styles/globals.css";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <div className="h-screen w-screen bg-gray-900">
+      <div className="w-screen bg-gray-900">
         <Navigation>
-          <div className="pt-6 lg:pt-12 pl-28 lg:pl-44 pr-4">
+          {
+            Component.name === 'Home' ? <Component {...pageProps} /> : <div className="pt-6 lg:pt-12 pl-28 lg:pl-44 pr-4">
             <Component {...pageProps} />
           </div>
+          }
           <GiantHeader />
         </Navigation>
       </div>
