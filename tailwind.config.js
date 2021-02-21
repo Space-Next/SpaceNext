@@ -19,7 +19,7 @@ module.exports = {
         "space": "url('https://i.ytimg.com/vi/dqoHcfMn6Ck/maxresdefault.jpg')",
       }),
       height: {
-        'sm': '77%'
+        'sm': '75%'
       }
     },
   },
