@@ -20,5 +20,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require("tailwindcss-writing-mode")],
+  plugins: [],
 };
