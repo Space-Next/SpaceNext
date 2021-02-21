@@ -13,7 +13,7 @@ module.exports = {
         "16xl": ["14rem", "14rem"],
       },
       fontFamily: {
-        bungee: ["Bungee Outline", "cursive", "sans-serif"],
+        nunito: ["Nunito", "sans-serif"],
       },
       backgroundImage: (theme) => ({
         "space": "url('https://i.ytimg.com/vi/dqoHcfMn6Ck/maxresdefault.jpg')",
@@ -26,5 +26,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("tailwindcss-writing-mode")],
 };
