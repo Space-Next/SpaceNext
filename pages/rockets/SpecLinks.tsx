@@ -12,13 +12,13 @@ interface IProps {
 
 const SpecLinks = ({ links, setLinkState, selectedStyle }: IProps) => {
   return (
-    <div className="w-full flex items-center justify-end mb-10">
+    <div className="w-full flex items-center justify-center xl:justify-end mb-10">
       {links.map((link) => (
         <button
           key={link}
-          className={`p-4 text-gray-300 font-medium capitalize ${selectedStyle(
+          className={`px-4 pb-4 text-gray-300 font-medium capitalize ${selectedStyle(
             link
-          )} focus:outline-none hover:border-yellow-900`}
+          )} focus:outline-none xl:hover:border-yellow-900`}
           onClick={() => setLinkState(link)}
         >
           {link}

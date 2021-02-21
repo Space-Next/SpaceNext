@@ -12,11 +12,11 @@ const NavigationLinks = () => {
   return (
     <>
       {ifNotHomepage && (
-        <div className="absolute left-0 top-0 flex flex-col px-4 pt-10">
+        <div className="hidden lg:flex absolute left-0 top-0 flex-col px-4 pt-10">
           {links.map((link) =>
             ifNotLink(link) ? (
               <Link key={link} href={`/${link}`}>
-                <button className="mb-10 ml-4 capitalize text-left font-medium text-gray-300 opacity-80 lg:text-xl hover:underline hover:text-yellow-500 focus:outline-none">
+                <button className="mb-10 ml-4 capitalize text-left font-medium text-gray-300 opacity-80 lg:text-xl xl:hover:underline xl:hover:text-yellow-500 focus:outline-none">
                   {link}
                 </button>
               </Link>

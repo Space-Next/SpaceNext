@@ -20,7 +20,6 @@
     "framer-motion": "^3.3.0",
     "next": "10.0.6",
     "react": "17.0.1",
-    "react-countup": "^4.3.3",
     "react-dom": "17.0.1",
     "react-redux": "^7.2.2",
     "redux": "^4.0.5",
@@ -38,7 +37,6 @@
     "eslint": "^7.19.0",
     "jest": "^26.6.3",
     "postcss": "^8.2.6",
-    "tailwindcss": "^2.0.3",
-    "tailwindcss-writing-mode": "^1.0.0"
+    "tailwindcss": "^2.0.3"
   }
 }

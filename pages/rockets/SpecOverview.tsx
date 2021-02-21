@@ -31,7 +31,7 @@ const SpecOverview = ({ specs, payloadWeights }: IProps) => {
       : "border-b-2 border-gray-700 text-opacity-70 hover:text-opacity-100";
 
   return (
-    <div className="h-full ml-10">
+    <div className="h-10/12 xl:h-full w-full px-4 xl:px-0 ml-0 xl:ml-10">
       <SpecLinks
         links={links}
         selectedStyle={selectedStyle}

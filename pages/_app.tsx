@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <div className="min-h-screen w-screen bg-gray-900">
-        <div className="pl-28 lg:pl-44 pt-10 w-full">
+        <div className="pl-0 lg:pl-44 pt-10 w-full">
           <Component {...pageProps} />
         </div>
         <NavigationLinks />

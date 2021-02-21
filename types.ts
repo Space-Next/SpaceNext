@@ -104,6 +104,9 @@ export interface FormattedRocketData {
     description: string;
     wikipedia: string;
     active: boolean;
+    engine: string;
+    stages: number;
+    layout: string;
   };
   specs: {
     spec: string;

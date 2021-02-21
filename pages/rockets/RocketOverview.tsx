@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { Globe } from "../../components/icons/Icons";
 
 interface IProps {
@@ -7,21 +8,25 @@ interface IProps {
     description: string;
     wikipedia: string;
     active: boolean;
+    engine: string;
+    stages: number;
+    layout: string;
   };
 }
 
 const RocketOverview = ({ overview }: IProps) => {
+  const tags = [overview.layout, overview.engine];
   return (
-    <div className="w-96 pt-4">
-      <div className="relative">
+    <div className="w-full md:w-1/2 sm:flex md:block lg:w-96 mb-10 lg:mb-0">
+      <div className="relative w-full sm:w-96">
         <img
-          className="h-96 w-96 rounded-md"
+          className="h-96 w-full rounded-md"
           src={overview.images[0]}
           alt="rocket ship"
         />
         <div className="w-full absolute bottom-0 pt-5 bg-gradient-to-b from-transparent to-gray-900">
-          <div className="flex items-end justify-between px-2">
-            <h1 className="font-bold text-5xl text-yellow-500">
+          <div className="flex items-end px-2 justify-between">
+            <h1 className="font-bold text-3xl lg:text-5xl text-yellow-500">
               {overview.name}
             </h1>
 
@@ -31,16 +36,32 @@ const RocketOverview = ({ overview }: IProps) => {
           </div>
         </div>
       </div>
-      <p className="my-5 px-2 text-white">{overview.description}</p>
-      <div className="hover:text-yellow-500 hover:underline inline">
-        <a
-          className="inline-flex text-white font-medium"
-          href={overview.wikipedia}
-          target="_blank"
-        >
-          <Globe />
-          Wikipedia
-        </a>
+      <div className="sm:w-1/2 md:w-auto sm:px-4 md:px-0 flex flex-col justify-between">
+        <p className="my-5 sm:m-0 md:my-5 text-white text-base sm:text-lg">
+          {overview.description}
+        </p>
+        <div className="mt-5 flex flex-row lg:flex-col justify-between">
+          <div className="flex lg:mb-10">
+            {tags.map((tag) => (
+              <Fragment key={tag}>
+                {tag && (
+                  <span className="px-3 lg:px-4 py-1 lg:py-2 mr-2 bg-yellow-500 text-white text-sm font-medium capitalize bg-opacity-50 rounded-full flex items-center">
+                    {tag}
+                  </span>
+                )}
+              </Fragment>
+            ))}
+          </div>
+
+          <a
+            className="inline-flex items-center md:hover:text-yellow-500 md:hover:underline text-white font-medium text-sm lg:text-base"
+            href={overview.wikipedia}
+            target="_blank"
+          >
+            <Globe />
+            Wikipedia
+          </a>
+        </div>
       </div>
     </div>
   );

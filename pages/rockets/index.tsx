@@ -27,16 +27,16 @@ const Rockets = ({ formattedData }: IProps) => {
         <title>SpaceNext - Rockets</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex justify-start">
-        <div className="w-full flex items-start justify-between rounded-md">
-          <RocketOverview overview={overview} />
-          <SpecOverview specs={specs} payloadWeights={payloadWeights} />
-        </div>
+      <div className="flex flex-col xl:flex-row-reverse justify-start">
         <NavigationLinks
           formattedData={formattedData}
           selection={selection}
           onClick={onClick}
         />
+        <div className="w-full px-4 lg:px-0 flex flex-col md:flex-row items-start justify-between rounded-md">
+          <RocketOverview overview={overview} />
+          <SpecOverview specs={specs} payloadWeights={payloadWeights} />
+        </div>
       </div>
     </>
   );
@@ -63,18 +63,14 @@ export const getStaticProps: GetStaticProps = async () => {
       },
       {
         spec: "Mass",
-        main: element.mass.lb,
+        main: formatter(element.mass.lb),
         mainSuffix: "lb",
-        secondary: element.mass.kg,
+        secondary: formatter(element.mass.kg),
         secondarySuffix: "kg /",
       },
       {
         spec: "Cost per launch",
         main: `$ ${formatter(element.cost_per_launch)}`,
-      },
-      {
-        spec: "stages",
-        main: element.stages,
       },
       {
         spec: "First flight",
@@ -84,7 +80,7 @@ export const getStaticProps: GetStaticProps = async () => {
     const payloadWeights = element.payload_weights.map((element) => {
       return {
         id: element.id,
-        main: formatter(element.lb),
+        main: formatter(element.kg),
         mainSuffix: "lb",
         secondary: formatter(element.kg),
         secondarySuffix: "kg /",
@@ -99,6 +95,9 @@ export const getStaticProps: GetStaticProps = async () => {
         description: element.description,
         wikipedia: element.wikipedia,
         active: element.active,
+        stages: element.stages,
+        layout: element.engines.layout,
+        engine: element.engines.type,
       },
       specs,
       payloadWeights,
