@@ -15,7 +15,7 @@ const formatter = new Intl.NumberFormat().format;
 
 const SingleRocket = ({ formattedData }: IProps)  => {
   const router = useRouter()
-  const queryId : string = router.query.rocket
+  const queryId:string = router.query.rocket as string
 
   const [selection, setSelection] = useState(0);
   const { overview, specs, payloadWeights, id} = formattedData[selection];
