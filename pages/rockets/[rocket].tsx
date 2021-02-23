@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect} from "react";
+import {useRouter} from 'next/router'
 import Head from "next/head";
-import { GetStaticProps } from "next";
 import NavigationLinks from "./NavigationLinks";
 import RocketOverview from "./RocketOverview";
-import { FormattedRocketData, RocketData } from "../../types";
+import { FormattedRocketData } from "../../types";
 import dayjs from "dayjs";
 import SpecOverview from "./SpecOverview";
 
@@ -13,9 +13,20 @@ interface IProps {
 
 const formatter = new Intl.NumberFormat().format;
 
-const Rockets = ({ formattedData }: IProps) => {
+const SingleRocket = ({ formattedData }: IProps)  => {
+  const router = useRouter()
+  const queryId = router.query.rocket
+
   const [selection, setSelection] = useState(0);
-  const { overview, specs, payloadWeights } = formattedData[selection];
+  const { overview, specs, payloadWeights, id} = formattedData[selection];
+
+  useEffect(() => {
+    if(id !== queryId) {
+      const newIdx = formattedData.map(curr => curr.id).indexOf(queryId)
+      console.log('this is index', newIdx)
+      setSelection(newIdx)
+    }
+  })
 
   return (
     <>
@@ -35,11 +46,20 @@ const Rockets = ({ formattedData }: IProps) => {
       </div>
     </>
   );
-};
+}
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticPaths = async () => {
+  const req = await fetch("https://api.spacexdata.com/v4/rockets");
+  const rocketData = await req.json();
+  const ids = rocketData.map(rocket => rocket.id)
+  const paths = ids.map(id => ({params: {rocket: id}}))
+
+  return { paths, fallback: false }
+}
+
+export const getStaticProps = async () => {
   const request = await fetch("https://api.spacexdata.com/v4/rockets");
-  const rocketData: RocketData[] = await request.json();
+  const rocketData = await request.json();
   const formattedData = rocketData.map((element) => {
     const specs = [
       {
@@ -72,6 +92,7 @@ export const getStaticProps: GetStaticProps = async () => {
         main: dayjs(element.first_flight).format("MMM DD, YY"),
       },
     ];
+
     const payloadWeights = element.payload_weights.map((element) => {
       return {
         id: element.id,
@@ -82,6 +103,7 @@ export const getStaticProps: GetStaticProps = async () => {
         spec: element.name,
       };
     });
+
     return {
       id: element.id,
       overview: {
@@ -106,4 +128,5 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default Rockets;
+
+export default SingleRocket;
