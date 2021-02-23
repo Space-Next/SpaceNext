@@ -3,7 +3,7 @@ import {useRouter} from 'next/router'
 import Head from "next/head";
 import NavigationLinks from "./NavigationLinks";
 import RocketOverview from "./RocketOverview";
-import { FormattedRocketData } from "../../types";
+import { FormattedRocketData, RocketData } from "../../types";
 import dayjs from "dayjs";
 import SpecOverview from "./SpecOverview";
 
@@ -15,7 +15,7 @@ const formatter = new Intl.NumberFormat().format;
 
 const SingleRocket = ({ formattedData }: IProps)  => {
   const router = useRouter()
-  const queryId = router.query.rocket
+  const queryId : string = router.query.rocket
 
   const [selection, setSelection] = useState(0);
   const { overview, specs, payloadWeights, id} = formattedData[selection];
@@ -23,7 +23,6 @@ const SingleRocket = ({ formattedData }: IProps)  => {
   useEffect(() => {
     if(id !== queryId) {
       const newIdx = formattedData.map(curr => curr.id).indexOf(queryId)
-      console.log('this is index', newIdx)
       setSelection(newIdx)
     }
   })
@@ -50,7 +49,7 @@ const SingleRocket = ({ formattedData }: IProps)  => {
 
 export const getStaticPaths = async () => {
   const req = await fetch("https://api.spacexdata.com/v4/rockets");
-  const rocketData = await req.json();
+  const rocketData : RocketData[] = await req.json();
   const ids = rocketData.map(rocket => rocket.id)
   const paths = ids.map(id => ({params: {rocket: id}}))
 
@@ -59,7 +58,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async () => {
   const request = await fetch("https://api.spacexdata.com/v4/rockets");
-  const rocketData = await request.json();
+  const rocketData : RocketData[] = await request.json();
   const formattedData = rocketData.map((element) => {
     const specs = [
       {
