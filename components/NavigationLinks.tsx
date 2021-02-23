@@ -7,7 +7,8 @@ const links = ["rockets", "launches", "starlink", "about"];
 const NavigationLinks = () => {
   const router = useRouter();
   const ifNotHomepage = router.pathname !== "/";
-  const ifNotLink = (link: string) => router.pathname !== `/${link}`;
+  const initalRoute = router.pathname.split("/")
+  const ifNotLink = (link: string) => initalRoute[1] !== link;
 
   return (
     <>
