@@ -23,7 +23,7 @@ The environment should open up in `localhost:3000`
 
 #### About the developers
 
-- [Khoung Lee](https://github.com/khnghle) is a full-stack developer who prefers backend. Here's his [Linkedin](https://www.linkedin.com/in/khuonghle4/) and his [portfolio](https://khnghle.github.io/personal_portfolio/).
+- [Khuong Le](https://github.com/khnghle) is a full-stack developer who prefers backend. Here's his [Linkedin](https://www.linkedin.com/in/khuonghle4/) and his [portfolio](https://khnghle.github.io/personal_portfolio/).
 
 - [Asharon Baltazar](https://github.com/asharonbaltazar) is a front-end developer who enjoys React.
 
