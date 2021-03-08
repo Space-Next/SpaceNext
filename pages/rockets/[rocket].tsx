@@ -6,6 +6,7 @@ import RocketOverview from "./RocketOverview";
 import { FormattedRocketData, RocketData } from "../../types";
 import dayjs from "dayjs";
 import SpecOverview from "./SpecOverview";
+import {server} from '../../config'
 
 interface IProps {
   formattedData: FormattedRocketData[];
@@ -48,7 +49,7 @@ const SingleRocket = ({ formattedData }: IProps)  => {
 }
 
 export const getStaticPaths = async () => {
-  const req = await fetch("https://api.spacexdata.com/v4/rockets");
+  const req = await fetch(`${server}/api/rockets`)
   const rocketData : RocketData[] = await req.json();
   const ids = rocketData.map(rocket => rocket.id)
   const paths = ids.map(id => ({params: {rocket: id}}))
