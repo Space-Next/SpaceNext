@@ -124,3 +124,83 @@ export interface FormattedRocketData {
     secondarySuffix: string;
   }[];
 }
+
+export interface LaunchData {
+  fairings: {
+    reused: boolean;
+    recovery_attempt: boolean;
+    recovered: null;
+    ships: string[] | [];
+  };
+  links: {
+    patch: {
+      small: string;
+      large: string;
+    };
+    reddit: {
+      campaign: string;
+      launched: string;
+      media: string | null;
+      recovery: string;
+    };
+    flickr: {
+      small: string[];
+      original: string[];
+    };
+    presskit: null;
+    webcast: string;
+    youtube_id: string;
+    article: string | null;
+    wikipedia: string;
+  };
+
+  static_fire_date_utc: number;
+  static_fire_date_unix: number;
+  tbd: boolean;
+  net: boolean;
+  window: string | number | null;
+  rocket: string;
+  success: boolean;
+  details: string;
+  crew: string[];
+  ships: string[];
+  capsules: string[];
+  payloads: string[];
+  launchpad: string;
+  auto_update: boolean;
+  launch_library_id: string;
+  failures: string[];
+  flight_number: number;
+  name: string;
+  date_utc: string;
+  date_unix: number;
+  date_local: string;
+  date_precision: string;
+  upcoming: boolean;
+  cores: {
+    core: string;
+    flight: number;
+    gridfins: boolean;
+    legs: boolean;
+    reused: boolean;
+    landing_attempt: boolean;
+    landing_success: boolean;
+    landing_type: string;
+    landpad: string;
+  }[];
+  id: string;
+}
+
+export interface FormattedLaunchData {
+  id: string;
+  details: string;
+  rocketId: string;
+  flightNumber: number;
+  success?: boolean;
+  dateLocal: string;
+  payloads: string[];
+  largePatch: string;
+  flickr: string[];
+  wikipedia: string;
+  youtube: string;
+}

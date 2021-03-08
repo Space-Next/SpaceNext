@@ -12,7 +12,7 @@ const NavigationLinks = () => {
   return (
     <>
       {ifNotHomepage && (
-        <div className="hidden lg:flex absolute left-0 top-0 flex-col px-4 pt-10">
+        <div className="hidden lg:flex fixed left-0 top-0 flex-col px-4 pt-10">
           {links.map((link) =>
             ifNotLink(link) ? (
               <Link key={link} href={`/${link}`}>
