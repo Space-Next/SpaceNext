@@ -6,7 +6,7 @@ import RocketOverview from "./RocketOverview";
 import { FormattedRocketData, RocketData } from "../../types";
 import dayjs from "dayjs";
 import SpecOverview from "./SpecOverview";
-import {server} from '../../config'
+import { server } from "../../config"
 
 interface IProps {
   formattedData: FormattedRocketData[];
