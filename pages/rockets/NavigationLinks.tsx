@@ -10,7 +10,6 @@ function NavigationLinks({ formattedData, selection }: IProps) {
 
   return (
     <div className="xl:h-96 xl:w-1/5 mb-5 md:mb-10 xl:mb-0 mx-4 lg:mx-0 xl:pb-10 xl:px-4 flex xl:flex-col xl:ml-10 xl:justify-center rounded-md overflow-x-auto">
-      {console.log(formattedData[0].id)}
       {formattedData.map((element, index) => (
         <Link
           key={element.id}
