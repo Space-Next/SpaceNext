@@ -2,11 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import GiantHeader from "./GiantHeader";
 
-<<<<<<< HEAD
-const links = ["rockets", "launches", "starlink", "history", "about"];
-=======
-const links = ["rockets", "launches", "about"];
->>>>>>> 354737d71ac6c9431bbbf9e6413f7e7d6ed8c1b2
+const links = ["rockets", "launches", "about", "history"];
 
 const NavigationLinks = () => {
   const router = useRouter();

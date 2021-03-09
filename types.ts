@@ -215,4 +215,6 @@ export interface HistoryData {
   id: string
 }
 
-export interface FormattedHistoryData {}
+export interface FormattedHistoryData {
+  id: string;
+}
