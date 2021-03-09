@@ -1,6 +1,6 @@
 import { RocketData } from "../../types";
 
-export default async (req, res, next) => {
+export default async (_, res, next) => {
   try {
     const req = await fetch("https://api.spacexdata.com/v4/rockets");
     const rocketData : RocketData[] = await req.json();
