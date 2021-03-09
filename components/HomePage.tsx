@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-const links = ['rockets', 'launches', 'starlink', 'about']
+const links = ['rockets', 'launches', 'starlink', 'history', 'about']
 const HomePage = () => {
   return (
     <div className="h-screen w-screen bg-space ">
