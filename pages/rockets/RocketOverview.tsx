@@ -58,7 +58,7 @@ const RocketOverview = ({ overview }: IProps) => {
             href={overview.wikipedia}
             target="_blank"
           >
-            <Globe />
+            <Globe className={"h-5 w-5 lg:w-6 lg:h-6 mr-2 text-white"} />
             Wikipedia
           </a>
         </div>
