@@ -1,4 +1,4 @@
-import { FormattedRocketData, RocketData } from "../../types";
+import { RocketData } from "../../types";
 
 export default async (req, res, next) => {
   try {
