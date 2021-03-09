@@ -6,7 +6,10 @@ const formatter = new Intl.NumberFormat().format;
 
 export const GetIds = async () => {
   const req = await fetch(`${server}/api/rockets`)
+
   const rocketData : RocketData[] = await req.json();
+  console.log(rocketData)
+
   const ids = rocketData.map(rocket => rocket.id)
   return ids
 }
