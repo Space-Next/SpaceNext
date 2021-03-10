@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import NavigationLinks from "./NavigationLinks";
-import RocketOverview from "./RocketOverview";
+import NavigationLinks from "../../components/rockets/NavigationLinks";
+import RocketOverview from "../../components/rockets/RocketOverview";
 import { FormattedRocketData } from "../../types";
-import SpecOverview from "./SpecOverview";
-import { GetIds, GetFormattedData } from "../services/Rockets";
+import SpecOverview from "../../components/rockets/SpecOverview";
+import { GetIds, GetFormattedData } from "../../services/Rockets";
 
 interface IProps {
   formattedData: FormattedRocketData[];

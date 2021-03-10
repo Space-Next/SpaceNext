@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useRouter } from 'next/router'
 import { GetStaticProps } from "next";
 import { FormattedRocketData } from "../../types";
-import {GetIds} from "../services/Rockets"
+import {GetIds} from "../../services/Rockets"
 interface IProps {
   formattedData: FormattedRocketData[];
 }

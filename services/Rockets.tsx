@@ -1,12 +1,18 @@
-import { server } from "../../config"
-import { RocketData } from "../../types";
+import { RocketData } from "../types";
 import dayjs from "dayjs";
 
 const formatter = new Intl.NumberFormat().format;
 
 export const GetIds = async () => {
-  const req = await fetch(`${server}/api/rockets`)
-
+  const req = await fetch("https://api.spacexdata.com/v4/rockets", {
+    method: "GET",
+    headers: {
+      // update with your user-agent
+      "User-Agent":
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
+      Accept: "application/json; charset=UTF-8",
+    },
+  });
   const rocketData : RocketData[] = await req.json();
   console.log(rocketData)
 
@@ -15,7 +21,15 @@ export const GetIds = async () => {
 }
 
 export const GetFormattedData = async () => {
-  const req = await fetch(`${server}/api/rockets`)
+  const req = await fetch("https://api.spacexdata.com/v4/rockets", {
+    method: "GET",
+    headers: {
+      // update with your user-agent
+      "User-Agent":
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
+      Accept: "application/json; charset=UTF-8",
+    },
+  });
   const rocketData: RocketData[] = await req.json();
   const formattedData = rocketData.map((element) => {
     const specs = [
@@ -80,4 +94,5 @@ export const GetFormattedData = async () => {
 
   return formattedData;
 }
+
 

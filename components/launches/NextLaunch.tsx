@@ -2,7 +2,7 @@ import { createRef, useEffect } from "react";
 import LaunchCountdown from "./LaunchCountdown";
 import { FormattedLaunchData } from "../../types";
 import dayjs from "dayjs";
-import { Globe, Play } from "../../components/icons/Icons";
+import { Globe, Play } from "../icons/Icons";
 
 interface IProps {
   data: FormattedLaunchData;
