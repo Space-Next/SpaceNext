@@ -216,5 +216,9 @@ export interface HistoryData {
 }
 
 export interface FormattedHistoryData {
+  links: string;
+  title: string;
+  event_date: string;
+  details: string;
   id: string;
 }
