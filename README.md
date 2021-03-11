@@ -27,4 +27,7 @@ The environment should open up in `localhost:3000`
 
 - [Asharon Baltazar](https://github.com/asharonbaltazar) is a front-end developer who enjoys React.
 
+- [Chris DiPiero](https://github.com/ChrisDiPiero)
+
+
 Both are looking for work 💼.
