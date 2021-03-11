@@ -15,7 +15,7 @@ const HomePage = () => {
           Welcome to Space<span className="text-yellow-500">Next</span>
         </div>
 
-        <div className="w-screen absolute bottom-0 left-0 overflow-hidden h-sm bg-cover" style={{backgroundImage : "url('Earth_WH.png')"}}/>
+        <div className="w-screen absolute bottom-0 left-0 overflow-hidden h-earth bg-cover" style={{backgroundImage : "url('Earth_WH.png')"}}/>
 
         <div className="text-white flex justify-center w-screen">
           <div className="flex items-center flex-col bg-black bg-opacity-70	z-50 p-5 rounded-md">
