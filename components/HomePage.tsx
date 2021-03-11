@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Tilt from "react-parallax-tilt";
 
-const links = ["rockets", "launches", "history"];
+const links = ["rockets", "launches", "news"];
 
 const HomePage = () => {
   return (
