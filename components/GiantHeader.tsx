@@ -6,7 +6,7 @@ interface IProps {
 
 const GiantHeader = ({ link }: IProps) => {
   return (
-    <h1 className="mb-10 hidden lg:block text-8xl lg:text-11xl vertical-mode transform rotate-60 text-gray-300 tracking-wide capitalize text-center">
+    <h1 className="mb-5 ml-5 hidden lg:block text-8xl lg:text-7xl vertical-mode transform rotate-60 text-gray-400 tracking-wide capitalize text-center">
       {link}
     </h1>
   );
