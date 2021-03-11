@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import GiantHeader from "./GiantHeader";
 
-const links = ['rockets', 'launches', 'history'];
+const links = ["rockets", "launches", "news"];
 
 const NavigationLinks = () => {
   const router = useRouter();
@@ -14,7 +14,7 @@ const NavigationLinks = () => {
     <>
       {ifNotHomepage && (
         <div className="hidden lg:flex fixed left-0 top-0 flex-col px-4 pt-10">
-          <Link key="home-page" href='/'>
+          <Link key="home-page" href="/">
             <a className="mb-5 ml-4 capitalize text-left font-medium text-gray-300 opacity-80 lg:text-xl focus:outline-none">
               Space<span className="text-yellow-500">Next</span>
             </a>
