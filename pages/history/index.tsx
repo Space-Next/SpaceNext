@@ -1,13 +1,12 @@
 
 import { GetStaticProps } from "next";
-import Head from "next/head";import { useEffect } from "react";
-import HistoryComponent from "./HistoryComponent";
-import { useRouter } from 'next/router'
+import Head from "next/head";
+import HistoryComponent from "../../components/history/HistoryComponent";
 import { FormattedHistoryData, HistoryData } from "../../types";
-import StickyHeader from "../launches/StickyHeader";
+import StickyHeader from "../../components/launches/StickyHeader";
 
 interface IProps {
-  data: FormattedHistoryData[];
+  historyList: FormattedHistoryData[];
 }
 
 const History = ( { historyList }:IProps ) => {
@@ -18,7 +17,7 @@ const History = ( { historyList }:IProps ) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <>
-        <StickyHeader title="history">
+        <StickyHeader title="News">
           <HistoryComponent data={ historyList }/>
         </StickyHeader>
       </>
@@ -26,7 +25,6 @@ const History = ( { historyList }:IProps ) => {
   )
 }
 
-export default History;
 
 export const getStaticProps: GetStaticProps = async () => {
   const request = await fetch("https://api.spacexdata.com/v4/history");
@@ -40,9 +38,10 @@ export const getStaticProps: GetStaticProps = async () => {
       details: element.details,
     };
   });
-
+  
   return {
     props: { historyList },
   };
 };
 
+export default History;
