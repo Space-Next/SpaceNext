@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Globe } from "../../components/icons/Icons";
+import { Globe } from "../icons/Icons";
 
 interface IProps {
   overview: {

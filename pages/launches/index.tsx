@@ -1,12 +1,12 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import UpcomingLaunches from "./UpcomingLaunches";
-import NextLaunch from "./NextLaunch";
-import PreviousLaunches from "./PreviousLaunches";
+import UpcomingLaunches from "../../components/launches/UpcomingLaunches";
+import NextLaunch from "../../components/launches/NextLaunch";
+import PreviousLaunches from "../../components/launches/PreviousLaunches";
 import { FormattedLaunchData, LaunchData } from "../../types";
 import dayjs from "dayjs";
 import isSameOrAfter from "dayjs/plugin/isSameOrAfter";
-import StickyHeader from "./StickyHeader";
+import StickyHeader from "../../components/launches/StickyHeader";
 dayjs.extend(isSameOrAfter);
 
 interface IProps {
