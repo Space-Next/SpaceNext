@@ -14,7 +14,6 @@ export const GetIds = async () => {
     },
   });
   const rocketData : RocketData[] = await req.json();
-  console.log(rocketData)
 
   const ids = rocketData.map(rocket => rocket.id)
   return ids

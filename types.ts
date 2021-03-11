@@ -204,3 +204,21 @@ export interface FormattedLaunchData {
   wikipedia: string;
   youtube: string;
 }
+
+export interface HistoryData {
+  links: {
+    article: string
+  };
+  title: string;
+  event_date_utc: string;
+  details: string;
+  id: string
+}
+
+export interface FormattedHistoryData {
+  links: string;
+  title: string;
+  event_date: string;
+  details: string;
+  id: string;
+}
