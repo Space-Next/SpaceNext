@@ -205,17 +205,17 @@ export interface FormattedLaunchData {
   youtube: string;
 }
 
-export interface HistoryData {
+export interface NewsData {
   links: {
-    article: string
+    article: string;
   };
   title: string;
   event_date_utc: string;
   details: string;
-  id: string
+  id: string;
 }
 
-export interface FormattedHistoryData {
+export interface FormattedNewsData {
   links: string;
   title: string;
   event_date: string;
